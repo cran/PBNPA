@@ -1,7 +1,7 @@
-a5a92de4d35c62f0f2d73e6d7386aff1 *DESCRIPTION
-a0c735df096e11d960a1a488b04d2131 *NAMESPACE
-408abd553412b00dca0337df9d333c1f *R/PBNPA.R
-4d00d9f9b1dd6c15d7c1a6e8b2a9d1d9 *inst/extdata/simdata_20per_off48.csv
-e341287082dee0ae39757cd8a0174557 *inst/extdata/simdata_20per_off49.csv
-ebfc77a189c5dd11006355f268b059ad *inst/extdata/simdata_20per_off50.csv
-16b6cb722937c5ecd21626b69c8d3a52 *man/PBNPA.Rd
+3f6b7452b58e84bf29ec061269852584 *DESCRIPTION
+f25a1900986c1c772c2f4e231100f192 *NAMESPACE
+80f5d0b241f9a480a1509fd95b658f60 *R/PBNPA.R
+02ae38938ad598e4c6b3a8368a4bb4ae *inst/extdata/simdata_20per_off48.csv
+44bd7bfaf8b92dd5f5b852019bd33d2e *inst/extdata/simdata_20per_off49.csv
+721c820fc2cc199929426fefc7fc9ec6 *inst/extdata/simdata_20per_off50.csv
+a144feb178b0c7b95a4a4652676aa9a6 *man/PBNPA.Rd

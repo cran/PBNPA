@@ -11,7 +11,8 @@ PBNPA(dat, sim.no = 10, alpha.threshold = 0.2, fdr = 0.05)
 Each element should be a dataframe with four columns. The first column is named
 'sgRNA' which is the sgRNA index; the second column is named 'Gene' which is the
 gene index; the third column should be the initial read count or control read
-count and the fourth column should be the final read count or treatment read count.}
+count and the fourth column should be the final read count or treatment read count.
+Missing values in the read count are replaced with 0.}
 
 \item{sim.no}{Number of permutations used to get the un-adjusted p-value.Set to 10 by default.}
 
@@ -29,25 +30,13 @@ identified as hits for negative screen; the fifth element is a dataframe which c
 p-values and FDR adjusted p-values for all the genes (for both negative selection and positive selection).
 }
 \description{
-This function uses the raw read count data for CRISPR (Clustered Regularly Interspaced Short
-Palindromic Repeats) screens and conducts statistical
-analysis for permutation based non-parametric analysis of CRISPR screen data. This function
-can also be used to analyze data from other types of functional genomics screens such as siRNA
-screen or shRNA screen. Drug screens or microarray expression data, if have similar structure as
-this algorithm is designed for, can also be analyzed with this function as the algorithm has no
-specific distributional assumptions for the data and p-values are calculated from a permutation
-based procedure. It can handle data with multiple replicates.
+This function reads the raw read count data and conducts statistical
+analysis for permutation based non-parametric analysis of CRISPR screen data.
 }
 \details{
-PBNPA implements permutation based non-parametric analysis of CRISPR screen data. First,
-it uses the the median natural log fold change of sgRNAs target the same gene as the R score for that gene.
-Then it randomly assigns the read count pairs (initial and final) to each gene for T times to get a null
-distribution of the R score. Then it calculates a p-value for each gene based on the null distribution.
-To improve the accuracy of the p-value, it will remove the genes with p-value smaller than a threshold to
-remove the significant genes and permute again to get a better estimation of the null distribution.
-Then p-values for each gene are calculated from this improved null distribution. Then FDR is controlled
-by Benjamini-Hochberg procedure. If multiple replicates are included, p-values from each replicate are
-combined with Fisher's method. Details about this algorithm is in the publication to be published.
+PBNPA implements permutation based non-parametric analysis of CRISPR screen data. Details
+about this algorithm are published in the following paper published on BMC genomics, Jia et al. (2017) <doi:10.1186/s12864-017-3938-5>: A permutation-based non-parametric analysis of CRISPR screen data.
+Please cite this paper if you use this algorithm for your paper.
 }
 \examples{
 dat11 = system.file('extdata','simdata_20per_off50.csv', package='PBNPA')
@@ -59,4 +48,3 @@ dat3 = read.csv(dat33, header = TRUE)
 datlist = list(dat1, dat2, dat3)
 result = PBNPA(datlist)
 }
-
